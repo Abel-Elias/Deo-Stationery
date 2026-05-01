@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEO STATIONERY</title>
+<style>
+:root {
+    --lightblue: #87CEEB;
+    --lightgreen: #90EE90;
+    --tomato: #FF6347;
+    --white: #ffffff;
+    --dark: #2d3436;
+    --gray: #636e72;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, var(--lightblue), var(--lightgreen), var(--tomato));
+    background-size: 400% 400%;
+    animation: colorShift 120s ease infinite;
+    color: var(--dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+@keyframes colorShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.topbar {
+    display:flex; justify-content:space-between; align-items:center;
+    padding:18px 6%; background:rgba(255,255,255,0.95);
+    box-shadow:0 3px 15px rgba(0,0,0,0.12); position:sticky; top:0; z-index:999;
+    flex-wrap:wrap; gap:10px;
+}
+.logo { display:flex; align-items:center; gap:12px; }
+.logo svg { width:42px; height:42px; }
+.logo h1 {
+    font-size:1.7rem; font-weight:800;
+    background:linear-gradient(90deg,var(--lightblue),var(--tomato));
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+.langswitch { display:flex; gap:8px; }
+.langswitch button {
+    padding:6px 16px; border:2px solid var(--tomato); background:white;
+    border-radius:20px; cursor:pointer; font-weight:700; font-size:.9rem; transition:.3s;
+}
+.langswitch button:hover, .langswitch button.active {
+    background:var(--tomato); color:white;
+}
+.nav {
+    display:flex; justify-content:center; gap:25px; padding:14px;
+    background:rgba(255,255,255,0.85); flex-wrap:wrap;
+    border-bottom:2px solid var(--lightblue);
+}
+.nav a {
+    text-decoration:none; color:var(--dark); font-weight:600; padding:6px 14px;
+    border-radius:18px; transition:.3s;
+}
+.nav a:hover { background:var(--lightgreen); color:white; }
+.hero {
+    display:flex; align-items:center; padding:60px 6%; gap:40px;
+    max-width:1300px; margin:0 auto; flex-wrap:wrap;
+}
+.hero-content { flex:1; min-width:300px; }
+.hero-content h2 { font-size:2.6rem; line-height:1.2; margin-bottom:16px; color:white; text-shadow:0 2px 10px rgba(0,0,0,0.2); }
+.hero-content h2 span { color:var(--white); }
+.hero-content p { color:#fff; font-size:1.1rem; line-height:1.6; margin-bottom:25px; max-width:650px; }
+.hero-btns { display:flex; gap:15px; flex-wrap:wrap; }
+.btn-main {
+    padding:13px 30px; background:white; color:var(--tomato);
+    border:none; border-radius:28px; font-size:1rem; font-weight:700;
+    cursor:pointer; text-decoration:none; transition:.3s; display:inline-flex; align-items:center; gap:8px;
+}
+.btn-main:hover { transform:translateY(-4px); box-shadow:0 10px 25px rgba(0,0,0,0.3); }
+.btn-wa { background:#25D366; color:white; }
+.owner-float {
+    position:fixed; right:20px; top:50%; transform:translateY(-50%);
+    z-index:998; text-align:center; width:120px;
+}
+.owner-float img, .owner-placeholder {
+    width:115px; height:115px; border-radius:50%; object-fit:cover;
+    border:4px solid white;
+    box-shadow:0 8px 25px rgba(0,0,0,0.15);
+}
+.owner-placeholder {
+    display:flex; flex-direction:column; align-items:center;
+    justify-content:center; background:rgba(255,255,255,0.85); color:var(--tomato); font-size:.8rem; gap:5px;
+}
+.owner-tag {
+    margin-top:6px; background:var(--tomato); color:white;
+    padding:4px 12px; border-radius:12px; font-size:.75rem; font-weight:600;
+    display:inline-block;
+}
+.dev-float {
+    position:fixed; right:20px; bottom:90px;
+    z-index:998; text-align:center; width:120px; cursor:pointer;
+}
+.dev-float img, .dev-ph-placeholder {
+    width:70px; height:70px; border-radius:50%; object-fit:cover;
+    border:3px solid var(--lightgreen);
+    box-shadow:0 8px 25px rgba(0,0,0,0.15);
+    margin:0 auto;
+}
+.dev-ph-placeholder {
+    display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(135deg,var(--lightblue),var(--lightgreen));
+    color:white; font-size:28px;
+}
+.dev-ph-placeholder img { width:100%; height:100%; border-radius:50%; object-fit:cover; }
+.dev-tag {
+    margin-top:6px; background:var(--lightgreen); color:var(--dark);
+    padding:4px 12px; border-radius:12px; font-size:.7rem; font-weight:600;
+    display:inline-block;
+}
+.container { max-width:1200px; margin:0 auto; padding:0 5%; }
+.sec-title { text-align:center; font-size:2rem; margin:40px 0 30px; color:var(--tomato); }
+.sec-title::after { content:''; display:block; width:60px; height:4px; background:var(--tomato); margin:10px auto; border-radius:2px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:25px; margin-bottom:50px; }
+.card {
+    background:rgba(255,255,255,0.92); border-radius:16px; padding:28px;
+    text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.08);
+    transition:transform .3s, box-shadow .3s; cursor:pointer;
+}
+.card:hover { transform:translateY(-8px); box-shadow:0 12px 30px rgba(0,0,0,0.15); }
+.icon-circle {
+    width:60px; height:60px; border-radius:50%; display:flex;
+    align-items:center; justify-content:center; margin:0 auto 15px;
+    font-size:24px; color:white;
+}
+.ic-blue { background:linear-gradient(135deg,var(--lightblue),#3498db); }
+.ic-green { background:linear-gradient(135deg,var(--lightgreen),#27ae60); }
+.ic-red { background:linear-gradient(135deg,var(--tomato),#c0392b); }
+.ic-purple { background:linear-gradient(135deg,#9b59b6,#8e44ad); }
+.ic-orange { background:linear-gradient(135deg,#e67e22,#f39c12); }
+.ic-teal { background:linear-gradient(135deg,#1abc9c,#16a085); }
+.ic-pink { background:linear-gradient(135deg,#fd79a8,#e84393); }
+.ic-indigo { background:linear-gradient(135deg,#6c5ce7,#a29bfe); }
+.ic-brown { background:linear-gradient(135deg,#b2773e,#8B4513); }
+.ic-navy { background:linear-gradient(135deg,#0984e3,#2d3436); }
+.ic-gold { background:linear-gradient(135deg,#f9ca24,#f0932b); }
+.ic-lime { background:linear-gradient(135deg,#a8e6cf,#00b894); }
+.card h3 { margin-bottom:10px; font-size:1.15rem; }
+.card p { color:#666; font-size:.95rem; line-height:1.5; }
+.pay-box {
+    background:rgba(255,255,255,0.95); border-radius:20px;
+    padding:40px; box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    margin:30px 0;
+}
+.pay-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; }
+.pay-card {
+    border:2px solid #eee; border-radius:14px; padding:22px;
+    text-align:center; transition:.3s;
+}
+.pay-card:hover { border-color:var(--tomato); }
+.pay-card h4 { font-size:1rem; margin-bottom:8px; }
+.pay-card .num { font-size:1.3rem; font-weight:800; color:var(--tomato); margin:8px 0; }
+.pay-card .nm { font-size:.85rem; color:#888; }
+.services-table-wrap {
+    background:rgba(255,255,255,0.95); border-radius:20px;
+    padding:30px; box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    margin:30px 0; overflow-x:auto;
+}
+.services-table { width:100%; border-collapse:collapse; font-size:.95rem; }
+.services-table th {
+    background:var(--tomato); color:white; padding:14px 18px;
+    text-align:left; border-radius:8px 8px 0 0;
+}
+.services-table td { padding:12px 18px; border-bottom:1px solid #eee; }
+.services-table tr:hover td { background:#fff5f3; }
+.services-table .price { font-weight:700; color:var(--tomato); }
+.services-table .avail { color:#27ae60; font-weight:600; }
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:30px; margin:30px 0; }
+@media(max-width:768px) {
+    .contact-grid { grid-template-columns:1fr; }
+    .hero-content h2 { font-size:1.8rem; }
+    .owner-float { right:10px; width:100px; }
+    .owner-float img, .owner-placeholder { width:95px; height:95px; }
+    .dev-float { right:10px; bottom:90px; width:100px; }
+    .dev-float img, .dev-ph-placeholder { width:58px; height:58px; }
+}
+.contact-info { background:rgba(255,255,255,0.92); border-radius:16px; padding:30px; box-shadow:0 6px 20px rgba(0,0,0,0.08); }
+.contact-item { display:flex; align-items:center; gap:15px; margin-bottom:20px; }
+.c-icon {
+    width:45px; height:45px; border-radius:50%; display:flex;
+    align-items:center; justify-content:center; color:white; flex-shrink:0; font-size:1.2rem;
+}
+.c-wa { background:#25D366; } .c-mail { background:var(--tomato); } .c-ph { background:var(--lightblue); }
+.contact-item a { color:var(--dark); text-decoration:none; font-weight:500; }
+.contact-item a:hover { color:var(--tomato); }
+.form-group { margin-bottom:15px; }
+.form-group label { display:block; margin-bottom:5px; font-weight:600; }
+.form-group input, .form-group textarea {
+    width:100%; padding:12px; border:2px solid #ddd; border-radius:10px;
+    font-size:1rem; font-family:inherit; transition:.3s;
+}
+.form-group input:focus, .form-group textarea:focus { border-color:var(--tomato); outline:none; }
+.form-group textarea { min-height:100px; resize:vertical; }
+.send-btn {
+    padding:12px 28px; background:var(--tomato); color:white;
+    border:none; border-radius:25px; font-size:1rem; font-weight:700;
+    cursor:pointer; transition:.3s;
+}
+.send-btn:hover { background:#e0553a; transform:translateY(-2px); }
+footer { background:var(--dark); color:white; padding:40px 20px; text-align:center; }
+footer a { color:var(--lightblue); text-decoration:none; }
+footer .socials { display:flex; justify-content:center; gap:15px; margin:15px 0; }
+footer .socials a {
+    width:42px; height:42px; border-radius:50%; background:rgba(255,255,255,0.1);
+    display:flex; align-items:center; justify-content:center; font-size:1.2rem; transition:.3s;
+}
+footer .socials a:hover { background:var(--tomato); }
+.wa-float {
+    position:fixed; bottom:20px; right:20px; width:55px; height:55px;
+    background:#25D366; border-radius:50%; display:flex; align-items:center;
+    justify-content:center; color:white; font-size:26px; text-decoration:none;
+    box-shadow:0 5px 20px rgba(0,0,0,0.3); z-index:999; animation:floatBtn 2s infinite;
+}
+@keyframes floatBtn { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+.admin-trigger {
+    position:fixed; bottom:20px; left:20px; background:var(--dark); color:white;
+    padding:10px 20px; border-radius:20px; cursor:pointer; font-size:.9rem; z-index:999;
+    border:2px solid var(--tomato);
+}
+.admin-trigger:hover { background:var(--tomato); }
+.modal-bg {
+    display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+    background:rgba(0,0,0,0.55); z-index:10000; justify-content:center; align-items:center;
+}
+.modal-bg.show { display:flex; }
+.modal-box {
+    background:white; border-radius:20px; padding:35px; max-width:520px; width:90%;
+    position:relative; max-height:85vh; overflow-y:auto;
+    box-shadow:0 20px 60px rgba(0,0,0,0.3);
+}
+.modal-box h2 { margin-bottom:20px; display:flex; align-items:center; gap:10px; color:var(--tomato); }
+.modal-close { position:absolute; top:12px; right:15px; background:none; border:none;
+    font-size:1.5rem; cursor:pointer; color:#999; transition:.3s; }
+.modal-close:hover { color:var(--tomato); }
+.pass-group { margin-bottom:20px; }
+.pass-group input { width:100%; padding:12px; border:2px solid #ddd; border-radius:8px; font-size:1rem; }
+.settings { display:none; }
+.settings.active { display:block; }
+.set-item { display:flex; justify-content:space-between; align-items:center; padding:14px;
+    background:#f9f9f9; border-radius:10px; margin-bottom:10px; flex-wrap:wrap; gap:8px; }
+.set-item label { font-weight:600; }
+.set-item input[type="color"] { border:none; cursor:pointer; width:40px; height:30px; }
+.set-item select { padding:8px; border-radius:8px; border:2px solid #ddd; }
+.switch { position:relative; width:46px; height:24px; flex-shrink:0; }
+.switch input { opacity:0; }
+.slider { position:absolute; cursor:pointer; top:0; left:0; right:0; bottom:0;
+    background:#ccc; border-radius:24px; transition:.3s; }
+.slider::before { position:absolute; content:""; height:18px; width:18px; left:3px; bottom:3px;
+    background:white; border-radius:50%; transition:.3s; }
+.switch input:checked + .slider { background:var(--lightgreen); }
+.switch input:checked + .slider::before { transform:translateX(22px); }
+.dev-box { text-align:center; }
+.dev-avatar { width:90px; height:90px; background:linear-gradient(135deg,var(--lightblue),var(--tomato));
+    border-radius:50%; margin:0 auto 15px; display:flex; align-items:center; justify-content:center;
+    color:white; font-size:36px; overflow:hidden; }
+.dev-avatar img { width:100%; height:100%; object-fit:cover; }
+.dev-box h3 { margin-bottom:5px; font-size:1.3rem; }
+.dev-box .company { color:var(--tomato); font-weight:600; margin-bottom:15px; }
+.dev-box .mail { margin:6px 0; font-size:.9rem; }
+.dev-box .mail a { color:var(--lightblue); }
+.dev-box .phone-contact {
+    margin:6px 0; font-size:.9rem;
+    transition: opacity .3s, max-height .3s;
+    overflow: hidden;
+}
+.dev-box .phone-contact.hidden-phone {
+    opacity: 0;
+    max-height: 0;
+    pointer-events: none;
+}
+.dev-box .phone-contact:not(.hidden-phone) {
+    opacity: 1;
+    max-height: 50px;
+}
+.dev-box .phone-contact a { color:var(--lightgreen); }
+.dev-details-box { margin-top:15px; background:#f9f9f9; border-radius:12px; padding:15px; text-align:left; font-size:.9rem; }
+.dev-details-box h4 { color:var(--tomato); margin-bottom:8px; }
+.dev-details-box ul { padding-left:20px; }
+.dev-details-box li { margin-bottom:4px; }
+.dev-nested-bg {
+    display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+    background:rgba(0,0,0,0.7); z-index:11000; justify-content:center; align-items:center;
+}
+.dev-nested-bg.show { display:flex; }
+.dev-nested-box {
+    background:white; border-radius:20px; padding:30px; max-width:550px; width:90%;
+    position:relative; max-height:85vh; overflow-y:auto;
+    box-shadow:0 20px 60px rgba(0,0,0,0.4);
+}
+.dev-nested-box h3 { color:var(--tomato); margin-bottom:15px; text-align:center; }
+.dev-nested-form .form-group { margin-bottom:12px; }
+.dev-nested-form input[type="text"],
+.dev-nested-form input[type="email"],
+.dev-nested-form input[type="tel"],
+.dev-nested-form textarea {
+    width:100%; padding:10px; border:2px solid #ddd; border-radius:8px; font-size:.9rem;
+}
+.dev-photo-preview {
+    width:100px; height:100px; border-radius:50%; margin:10px auto;
+    background:#eee; display:flex; align-items:center; justify-content:center;
+    overflow:hidden; border:3px dashed #ccc;
+}
+.dev-photo-preview img { width:100%; height:100%; object-fit:cover; }
+.dev-info-summary { background:#f0f9ff; border-radius:12px; padding:15px; margin:15px 0; }
+.dev-info-summary h4 { color:var(--dark); margin-bottom:8px; border-bottom:2px solid var(--lightblue); padding-bottom:5px; }
+.dev-info-summary p { font-size:.9rem; margin-bottom:4px; line-height:1.5; }
+.toast { position:fixed; top:90px; right:20px; background:var(--tomato); color:white;
+    padding:14px 22px; border-radius:12px; z-index:10001; display:none; animation:slideIn .3s; }
+@keyframes slideIn { from{transform:translateX(100%);opacity:0} to{transform:translateX(0);opacity:1} }
+.comments-section { transition: opacity .5s, max-height .5s; overflow: hidden; }
+.comments-section.hidden { opacity:0; max-height:0; pointer-events:none; }
+.comments-section:not(.hidden) { opacity:1; max-height:2000px; }
+.comments-box { max-width:700px; margin:20px auto; }
+.comment-card { background:rgba(255,255,255,0.9); padding:15px; border-radius:10px; margin-bottom:10px; border-left:4px solid var(--tomato); }
+.comment-card strong { color:var(--tomato); }
+.comment-card small { color:#999; }
+.service-dialog-bg {
+    display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+    background:rgba(0,0,0,0.55); z-index:10000; justify-content:center; align-items:center;
+}
+.service-dialog-bg.show { display:flex; }
+.service-dialog-box {
+    background:white; border-radius:20px; padding:30px; max-width:600px; width:90%;
+    position:relative; max-height:80vh; overflow-y:auto;
+}
+.service-dialog-box h3 { color:var(--tomato); margin-bottom:15px; display:flex; align-items:center; gap:10px; }
+.service-dialog-box ul { padding-left:20px; }
+.service-dialog-box li { margin-bottom:8px; font-size:.95rem; line-height:1.5; }
+.service-dialog-box .desc { color:#666; margin:10px 0; font-style:italic; }
+.dev-pass-prompt { text-align:center; padding:10px 0; }
+.dev-pass-prompt .lock-icon { font-size:3rem; margin-bottom:10px; }
+.dev-pass-prompt input { width:80%; padding:12px; border:2px solid #ddd; border-radius:8px; font-size:1rem; margin-bottom:10px; text-align:center; }
+.dev-pass-prompt .pass-error-msg { color:var(--tomato); font-size:.85rem; margin-bottom:10px; display:none; }
+@media(max-width:600px) {
+    .modal-box, .service-dialog-box, .dev-nested-box { width:95%; padding:20px; }
+    .set-item { flex-direction:column; align-items:flex-start; }
+}
+.timer {
+    position:fixed; bottom:70px; left:20px; background:var(--dark); color:white;
+    padding:6px 14px; border-radius:16px; font-size:.8rem; z-index:999;
+}
+
+/* ===== BOX MESSAGES STYLES ===== */
+.box-messages-header {
+    display:flex; justify-content:space-between; align-items:center;
+    margin-bottom:15px; padding-bottom:10px; border-bottom:2px solid var(--lightblue);
+}
+.box-messages-list {
+    max-height:400px; overflow-y:auto; margin:15px 0;
+}
+.message-card {
+    background:#f8f9fa; border-radius:10px; padding:15px; margin-bottom:10px;
+    border-left:4px solid var(--tomato); position:relative;
+}
+.message-card .msg-header {
+    display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;
+}
+.message-card .msg-name { font-weight:700; color:var(--dark); }
+.message-card .msg-date { font-size:.8rem; color:#888; }
+.message-card .msg-email {
+    font-size:.85rem; color:var(--lightblue); margin:5px 0;
+}
+.message-card .msg-email a { color:var(--lightblue); text-decoration:none; }
+.message-card .msg-email a:hover { text-decoration:underline; }
+.message-card .msg-content {
+    font-size:.95rem; color:#444; line-height:1.4; margin:8px 0;
+    background:white; padding:10px; border-radius:6px;
+}
+.message-card .msg-actions {
+    display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;
+}
+.msg-btn {
+    padding:6px 12px; border:none; border-radius:6px; font-size:.8rem;
+    cursor:pointer; display:inline-flex; align-items:center; gap:4px;
+    transition:.2s;
+}
+.msg-btn-email { background:var(--tomato); color:white; }
+.msg-btn-email:hover { background:#e0553a; }
+.msg-btn-wa { background:#25D366; color:white; }
+.msg-btn-wa:hover { background:#1ebe57; }
+.msg-btn-delete { background:#999; color:white; }
+.msg-btn-delete:hover { background:#777; }
+.msg-empty {
+    text-align:center; padding:30px; color:#888; font-style:italic;
+}
+.box-messages-footer {
+    display:flex; justify-content:space-between; align-items:center;
+    padding-top:15px; border-top:1px solid #eee;
+}
+.clear-all-btn {
+    padding:8px 16px; background:#dc3545; color:white; border:none;
+    border-radius:8px; cursor:pointer; font-size:.9rem;
+}
+.clear-all-btn:hover { background:#c82333; }
+</style>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<div class="topbar">
+    <div class="logo">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="10" fill="#FF6347"/>
+            <path d="M12 10h6a4 4 0 0 1 0 8h-6v10m8-10h6v10" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        </svg>
+        <h1>DEO STATIONERY</h1>
+    </div>
+    <div class="langswitch">
+        <button onclick="setLang('en')" id="enBtn">ENGLISH</button>
+        <button onclick="setLang('sw')" id="swBtn" class="active">KISWAHILI</button>
+    </div>
+</div>
+
+<!-- ===== NAVIGATION ===== -->
+<div class="nav">
+    <a href="#home" data-sw="Nyumbani" data-en="Home">Nyumbani</a>
+    <a href="#services" data-sw="Huduma" data-en="Services">Huduma</a>
+    <a href="#onlineapps" data-sw="Maombi Mtandaoni" data-en="Online Applications">Maombi Mtandaoni</a>
+    <a href="#stationerylist" data-sw="Stationery & Bidhaa" data-en="Stationery & Goods">Stationery & Bidhaa</a>
+    <a href="#payments" data-sw="Malipo" data-en="Payments">Malipo</a>
+    <a href="#contact" data-sw="Wasiliana" data-en="Contact">Wasiliana</a>
+</div>
+
+<!-- ===== FLOATING OWNER PHOTO ===== -->
+<div class="owner-float" id="ownerFloat" onclick="openOwnerDialog()">
+    <img src="Deo.jpg" alt="Owner" id="ownerImg" onerror="this.style.display='none'; document.getElementById('ownerPh').style.display='flex';">
+    <div class="owner-placeholder" id="ownerPh" style="display:none;">
+        <svg width="35" height="35" viewBox="0 0 24 24" fill="var(--tomato)"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v1.8h19.2v-1.8c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+        <span style="color:var(--tomato)">Deo Stationery</span>
+    </div>
+    <div class="owner-tag" data-sw="Mmiliki" data-en="Owner">Mmiliki</div>
+</div>
+
+<!-- ===== FLOATING DEVELOPER PHOTO ===== -->
+<div class="dev-float" id="devFloat" onclick="openDev()">
+    <div class="dev-ph-placeholder" id="devPhCircle">&#128187;</div>
+    <div class="dev-tag" data-sw="Msanidi Programu" data-en="Developer">Msanidi Programu</div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h2 data-sw="Kituo Chako cha Stationery na Huduma za Kidijitali" data-en="Your Stationery & Digital Services Center">Kituo Chako cha Stationery na Huduma za Kidijitali</h2>
+        <p data-sw="Vifaa vya stationery, uchapaji, uchangaji na huduma za maombi mtandaoni — NIDA, RITA, HESLB, TIN, Pasipoti na zaidi!" data-en="Stationery supplies, printing, scanning and online application services — NIDA, RITA, HESLB, TIN, Passport and more!">Vifaa vya stationery, uchapaji, uchangaji na huduma za maombi mtandaoni — NIDA, RITA, HESLB, TIN, Pasipoti na zaidi!</p>
+        <div class="hero-btns">
+            <a href="#services" class="btn-main" data-sw="Huduma Zetu" data-en="Our Services">Huduma Zetu</a>
+            <a href="https://wa.me/255784836995" class="btn-main btn-wa" target="_blank">
+                <svg style="width:18px;height:18px;" viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.59 2 2.17 6.42 2.17 11.87c0 1.75.46 3.45 1.33 4.95L2 22l5.3-1.39a9.8 9.8 0 0 0 4.74 1.21h.01c5.45 0 9.87-4.42 9.87-9.87 0-2.64-1.03-5.12-2.89-6.99A9.8 9.8 0 0 0 12.04 2z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== OUR SERVICES ===== -->
+<section id="services">
+    <div class="container">
+        <h2 class="sec-title" data-sw="Huduma Zetu" data-en="Our Services">Huduma Zetu</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="icon-circle ic-blue"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg></div>
+                <h3 data-sw="Uchapaji" data-en="Printing">Uchapaji</h3>
+                <p data-sw="Uchapaji nyeusi/nyeupe na wa rangi kwa bei nafuu." data-en="Affordable black/white and color printing.">Uchapaji nyeusi/nyeupe na wa rangi kwa bei nafuu.</p>
+            </div>
+            <div class="card">
+                <div class="icon-circle ic-green"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></div>
+                <h3 data-sw="Fotokopi" data-en="Photocopying">Fotokopi</h3>
+                <p data-sw="Huduma za haraka za fotokopi za nyaraka zote." data-en="Fast photocopying services for all documents.">Huduma za haraka za fotokopi za nyaraka zote.</p>
+            </div>
+            <div class="card">
+                <div class="icon-circle ic-red"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M9.4 10.5l4.77-8.26C14.87 1.39 16.34.94 17.49 1.67c.57.37.97.97 1.07 1.67h2.12c.72 0 1.32.6 1.32 1.32V20c0 .73-.6 1.32-1.32 1.32H6.64c-.72 0-1.32-.59-1.32-1.32V6.67c0-.72.6-1.32 1.32-1.32h1.68l1.08 1.83v1.16z"/></svg></div>
+                <h3 data-sw="Uchangaji" data-en="Scanning">Uchangaji</h3>
+                <p data-sw="Badilisha nyaraka zako kuwa kidijitali kwa ubora wa hali ya juu." data-en="Convert your documents to digital with high quality.">Badilisha nyaraka zako kuwa kidijitali kwa ubora wa hali ya juu.</p>
+            </div>
+            <div class="card">
+                <div class="icon-circle ic-purple"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-1 12H5c-.55 0-1-.45-1-1V9c0-.55.45-1 1-1h14c.55 0 1 .45 1 1v8c0 .55-.45 1-1 1z"/></svg></div>
+                <h3 data-sw="Uwekaji Laminati" data-en="Lamination">Uwekaji Laminati</h3>
+                <p data-sw="Linda nyaraka zako kwa laminati ya kitaalamu." data-en="Protect your documents with professional lamination.">Linda nyaraka zako kwa laminati ya kitaalamu.</p>
+            </div>
+            <div class="card">
+                <div class="icon-circle ic-orange"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg></div>
+                <h3 data-sw="Kuhariri Nyaraka" data-en="Document Editing">Kuhariri Nyaraka</h3>
+                <p data-sw="Kusoma, kuhariri na kuandaa nyaraka kwa kitaalamu." data-en="Read, edit and prepare documents professionally.">Kusoma, kuhariri na kuandaa nyaraka kwa kitaalamu.</p>
+            </div>
+            <div class="card">
+                <div class="icon-circle ic-teal"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                <h3 data-sw="Picha za Pasipoti" data-en="Passport Photos">Picha za Pasipoti</h3>
+                <p data-sw="Picha za pasipoti na kitambulisho zinachapishwa mara moja." data-en="Passport and ID photos printed instantly.">Picha za pasipoti na kitambulisho zinachapishwa mara moja.</p>
+            </div>
+            <div class="card">
+                <div class="icon-circle ic-pink"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M19 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM7 4h2v2H7V4zm0 4h2v2H7V8zm0 4h2v2H7v-2zm0 4h2v2H7v-2zm4-12h6v2h-6V4zm0 4h6v2h-6V8zm0 4h6v2h-6v-2zm0 4h6v2h-6v-2z"/></svg></div>
+                <h3 data-sw="Ufungaji" data-en="Binding">Ufungaji</h3>
+                <p data-sw="Huduma za kufunga nyaraka kwa spiral na aina nyingine." data-en="Spiral and other types of document binding services.">Huduma za kufunga nyaraka kwa spiral na aina nyingine.</p>
+            </div>
+            <div class="card">
+                <div class="icon-circle ic-indigo"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+                <h3 data-sw="Huduma za Barua Pepe" data-en="Email Services">Huduma za Barua Pepe</h3>
+                <p data-sw="Uundaji wa barua pepe, kutuma na kusimamia mawasiliano." data-en="Email creation, sending and communication management.">Uundaji wa barua pepe, kutuma na kusimamia mawasiliano.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ONLINE APPLICATION ===== -->
+<section id="onlineapps">
+    <div class="container">
+        <h2 class="sec-title" data-sw="Maombi Mtandaoni" data-en="Online Applications">Maombi Mtandaoni</h2>
+        <div class="grid">
+            <div class="card" onclick="openServiceDialog('rita')"><div class="icon-circle ic-red">🪪</div><h3 data-sw="RITA" data-en="RITA">RITA</h3><p data-sw="Vyeti vya Kuzaliwa na Vifo, Marekebisho" data-en="Birth & Death Certificates, Corrections">Vyeti vya Kuzaliwa na Vifo, Marekebisho</p></div>
+            <div class="card" onclick="openServiceDialog('nida')"><div class="icon-circle ic-green">🆔</div><h3 data-sw="NIDA" data-en="NIDA">NIDA</h3><p data-sw="Usajili na kufuatilia NIDA" data-en="NIDA Registration & Tracking">Usajili na kufuatilia NIDA</p></div>
+            <div class="card" onclick="openServiceDialog('tcu')"><div class="icon-circle ic-blue">🎓</div><h3 data-sw="TCU" data-en="TCU">TCU</h3><p data-sw="Maombi ya vyuo na uchaguzi wa kozi" data-en="University applications & course selection">Maombi ya vyuo na uchaguzi wa kozi</p></div>
+            <div class="card" onclick="openServiceDialog('heslb')"><div class="icon-circle ic-purple">💰</div><h3 data-sw="HESLB" data-en="HESLB">HESLB</h3><p data-sw="Maombi ya mkopo wa wanafunzi" data-en="Student loan applications">Maombi ya mkopo wa wanafunzi</p></div>
+            <div class="card" onclick="openServiceDialog('nactvet')"><div class="icon-circle ic-orange">🏫</div><h3 data-sw="NACTVET" data-en="NACTVET">NACTVET</h3><p data-sw="Maombi ya vyuo vya diploma/cheti" data-en="Diploma/Certificate college applications">Maombi ya vyuo vya diploma/cheti</p></div>
+            <div class="card" onclick="openServiceDialog('necta')"><div class="icon-circle ic-teal">📊</div><h3 data-sw="NECTA" data-en="NECTA">NECTA</h3><p data-sw="Angalia matokeo na kuomba vyeti" data-en="Check results & apply for certificates">Angalia matokeo na kuomba vyeti</p></div>
+            <div class="card" onclick="openServiceDialog('tra')"><div class="icon-circle ic-pink">🚗</div><h3 data-sw="TRA" data-en="TRA">TRA</h3><p data-sw="TIN, ufuatiliaji kodi, nambari za udhibiti" data-en="TIN, tax tracking, control numbers">TIN, ufuatiliaji kodi, nambari za udhibiti</p></div>
+            <div class="card" onclick="openServiceDialog('immigration')"><div class="icon-circle ic-navy">🪪</div><h3 data-sw="Immigration" data-en="Immigration">Immigration</h3><p data-sw="Maombi ya Pasipoti na Visa" data-en="Passport & Visa applications">Maombi ya Pasipoti na Visa</p></div>
+            <div class="card" onclick="openServiceDialog('brela')"><div class="icon-circle ic-brown">🏢</div><h3 data-sw="BRELA" data-en="BRELA">BRELA</h3><p data-sw="Kusajili biashara na leseni" data-en="Business registration & licensing">Kusajili biashara na leseni</p></div>
+            <div class="card" onclick="openServiceDialog('judiciary')"><div class="icon-circle ic-indigo">⚖️</div><h3 data-sw="Mahakama" data-en="Judiciary">Mahakama</h3><p data-sw="e-Filing na nyaraka za kisheria" data-en="e-Filing & legal documents">e-Filing na nyaraka za kisheria</p></div>
+            <div class="card" onclick="openServiceDialog('gepg')"><div class="icon-circle ic-gold">📱</div><h3 data-sw="GePG" data-en="GePG">GePG</h3><p data-sw="Malipo ya serikali na nambari za udhibiti" data-en="Government payments & control numbers">Malipo ya serikali na nambari za udhibiti</p></div>
+            <div class="card" onclick="openServiceDialog('common')"><div class="icon-circle ic-lime">📄</div><h3 data-sw="Huduma za Kawaida" data-en="Common Services">Huduma za Kawaida</h3><p data-sw="Uchangaji, uchapaji fomu, huduma za barua pepe" data-en="Scanning, form printing, email services">Uchangaji, uchapaji fomu, huduma za barua pepe</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== STATIONERY SERVICES & GOODS TABLE ===== -->
+<section id="stationerylist">
+    <div class="container">
+        <h2 class="sec-title" data-sw="📋 Huduma za Stationery na Bidhaa" data-en="📋 Stationery Services & Goods">📋 Huduma za Stationery na Bidhaa</h2>
+        <div class="services-table-wrap">
+            <h3 style="margin-bottom:15px; color:var(--tomato);" data-sw="🖨️ Huduma za Stationery" data-en="🖨️ Stationery Services">🖨️ Huduma za Stationery</h3>
+            <table class="services-table">
+                <thead><tr><th data-sw="Huduma" data-en="Service">Huduma</th><th data-sw="Bei (TZS)" data-en="Price (TZS)">Bei (TZS)</th><th data-sw="Hali" data-en="Status">Hali</th></tr></thead>
+                <tbody>
+                    <tr><td data-sw="Uchapaji Nyeusi/Nyeupe (kwa ukurasa)" data-en="Black/White Printing (per page)">Uchapaji Nyeusi/Nyeupe (kwa ukurasa)</td><td class="price">200 - 500</td><td class="avail" data-sw="✅ Yapatikana" data-en="✅ Available">✅ Yapatikana</td></tr>
+                    <tr><td data-sw="Uchapaji wa Rangi (kwa ukurasa)" data-en="Color Printing (per page)">Uchapaji wa Rangi (kwa ukurasa)</td><td class="price">500 - 1,500</td><td class="avail" data-sw="✅ Yapatikana" data-en="✅ Available">✅ Yapatikana</td></tr>
+                    <tr><td data-sw="Fotokopi (Nyeusi/Nyeupe)" data-en="Photocopy (Black/White)">Fotokopi (Nyeusi/Nyeupe)</td><td class="price">100 - 300</td><td class="avail" data-sw="✅ Yapatikana" data-en="✅ Available">✅ Yapatikana</td></tr>
+                    <tr><td data-sw="Fotokopi ya Rangi" data-en="Color Photocopy">Fotokopi ya Rangi</td><td class="price">500 - 1,000</td><td class="avail" data-sw="✅ Yapatikana" data-en="✅ Available">✅ Yapatikana</td></tr>
+                    <tr><td data-sw="Uchangaji wa Nyaraka" data-en="Document Scanning">Uchangaji wa Nyaraka</td><td class="price">500 - 2,000</td><td class="avail" data-sw="✅ Yapatikana" data-en="✅ Available">✅ Yapatikana</td></tr>
+                    <tr><td data-sw="Uwekaji Laminati (A4)" data-en="Lamination (A4)">Uwekaji Laminati (A4)</td><td class="price">1,000 - 3,000</td><td class="avail" data-sw="✅ Yapatikana" data-en="✅ Available">✅ Yapatikana</td></tr>
+                    <tr><td data-sw="Uwekaji Laminati (Kadi)" data-en="Lamination (Card)">Uwekaji Laminati (Kadi)</td><td class="price">2,000 - 5,000</td><td class="avail" data-sw="✅ Yapatikana" data-en="✅ Available">✅ Yapatikana</td></tr>
+                    <tr><td data-sw="Kuhariri/Typing ya Nyaraka" data-en="Document Editing/Typing">Kuhariri/Typing ya Nyaraka</td><td class="price">2,000 - 10,000</td><td class="avail" data-sw="✅ Yapatikana" data-en="✅ Available">✅ Yapatikana</td></tr>
+                    <tr><td data-sw="Uchapaji wa Picha za Pasipoti" data-en="Passport Photo Printing">Uchapaji wa Picha za Pasipoti</td><td class="price">3,000 - 5,000</td><td class="avail" data-sw="✅ Yapatikana" data-en="✅ Available">✅ Yapatikana</td></tr>
+                    <tr><td data-sw="Huduma za Barua Pepe" data-en="Email Services">Huduma za Barua Pepe</td><td class="price">1,000 - 3,000</td><td class="avail" data-sw="✅ Yapatikana" data-en="✅ Available">✅ Yapatikana</td></tr>
+                    <tr><td data-sw="Msaada wa Kujaza Fomu" data-en="Form Filling Assistance">Msaada wa Kujaza Fomu</td><td class="price">2,000 - 5,000</td><td class="avail" data-sw="✅ Yapatikana" data-en="✅ Available">✅ Yapatikana</td></tr>
+                    <tr><td data-sw="Ufungaji (Spiral)" data-en="Binding (Spiral)">Ufungaji (Spiral)</td><td class="price">2,000 - 5,000</td><td class="avail" data-sw="✅ Yapatikana" data-en="✅ Available">✅ Yapatikana</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="services-table-wrap">
+            <h3 style="margin-bottom:15px; color:var(--lightgreen); background:var(--dark); padding:10px 15px; border-radius:10px; display:inline-block;" data-sw="🛒 Bidhaa Zinazopatikana" data-en="🛒 Available Products">🛒 Bidhaa Zinazopatikana</h3>
+            <table class="services-table">
+                <thead><tr><th data-sw="Bidhaa" data-en="Product">Bidhaa</th><th data-sw="Bei (TZS)" data-en="Price (TZS)">Bei (TZS)</th><th data-sw="Zipo" data-en="In Stock">Zipo</th></tr></thead>
+                <tbody>
+                    <tr><td data-sw="Madaftari (ukubwa tofauti)" data-en="Notebooks (various sizes)">Madaftari (ukubwa tofauti)</td><td class="price">500 - 3,000</td><td class="avail" data-sw="✅ Ndiyo" data-en="✅ Yes">✅ Ndiyo</td></tr>
+                    <tr><td data-sw="Kalamu za Boli" data-en="Ballpoint Pens">Kalamu za wino</td><td class="price">500 - 2,000</td><td class="avail" data-sw="✅ Ndiyo" data-en="✅ Yes">✅ Ndiyo</td></tr>
+                    <tr><td data-sw="Penseli na Vifutio" data-en="Pencils & Erasers">Penseli na Vifutio</td><td class="price">300 - 1,000</td><td class="avail" data-sw="✅ Ndiyo" data-en="✅ Yes">✅ Ndiyo</td></tr>
+                    <tr><td data-sw="Ream ya Karatasi A4 (500)" data-en="A4 Paper Ream (500)">Ream ya Karatasi A4 (500)</td><td class="price">8,000 - 12,000</td><td class="avail" data-sw="✅ Ndiyo" data-en="✅ Yes">✅ Ndiyo</td></tr>
+                    <tr><td data-sw="Staplers na Vitu vya Kushona" data-en="Staplers & Staples">Staplers na Vitu vya Kushona</td><td class="price">2,000 - 8,000</td><td class="avail" data-sw="✅ Ndiyo" data-en="✅ Yes">✅ Ndiyo</td></tr>
+                    <tr><td data-sw="Glu na Sellotape" data-en="Glue & Sellotape">Glu na Sellotape</td><td class="price">500 - 3,000</td><td class="avail" data-sw="✅ Ndiyo" data-en="✅ Yes">✅ Ndiyo</td></tr>
+                    <tr><td data-sw="Folda na Mafaili" data-en="Folders & Files">Folda na Mafaili</td><td class="price">1,000 - 5,000</td><td class="avail" data-sw="✅ Ndiyo" data-en="✅ Yes">✅ Ndiyo</td></tr>
+                    <tr><td data-sw="Bahasha (tofauti)" data-en="Envelopes (various)">Bahasha (tofauti)</td><td class="price">200 - 1,500</td><td class="avail" data-sw="✅ Ndiyo" data-en="✅ Yes">✅ Ndiyo</td></tr>
+                    <tr><td data-sw="Kifutio cha Maji/Tape" data-en="Correction Fluid/Tape">Kifutio cha Maji/Tape</td><td class="price">500 - 2,000</td><td class="avail" data-sw="✅ Ndiyo" data-en="✅ Yes">✅ Ndiyo</td></tr>
+                    <tr><td data-sw="Rula na Seti za Jiometri" data-en="Rulers & Geometry Sets">Rula na Seti za Jiometri</td><td class="price">500 - 5,000</td><td class="avail" data-sw="✅ Ndiyo" data-en="✅ Yes">✅ Ndiyo</td></tr>
+                    <tr><td data-sw="USB Flash Drives" data-en="USB Flash Drives">USB Flash Drives</td><td class="price">8,000 - 25,000</td><td class="avail" data-sw="✅ Ndiyo" data-en="✅ Yes">✅ Ndiyo</td></tr>
+                    <tr><td data-sw="Vichaji na Kebo za Simu" data-en="Phone Chargers & Cables">Vichaji na Kebo za Simu</td><td class="price">3,000 - 15,000</td><td class="avail" data-sw="✅ Ndiyo" data-en="✅ Yes">✅ Ndiyo</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PAYMENT ===== -->
+<section id="payments">
+    <div class="container">
+        <h2 class="sec-title" data-sw="LIPA NAMBA – Njia za Malipo" data-en="PAY NUMBERS – Payment Methods">LIPA NAMBA – Njia za Malipo</h2>
+        <div class="pay-box">
+            <div class="pay-grid">
+                <div class="pay-card"><h4 style="color:#ED1C24;">Airtel Money</h4><div class="num">130064315</div><div class="nm">DEOKARI NIKASI GOTIFRIDI</div></div>
+                <div class="pay-card"><h4 style="color:#00A651;">Halopesa</h4><div class="num">23338487</div><div class="nm">DEOKARI NIKASI GOTIFRIDI</div></div>
+                <div class="pay-card"><h4 style="color:#9B59B6;">Mixx by Yas</h4><div class="num">22327552</div><div class="nm">DEOKARI NIKASI GOTIFRIDI</div></div>
+                <div class="pay-card"><h4 style="color:#4CAF50;">M-Pesa</h4><div class="num">51932397</div><div class="nm">STATIONERY SERVICE DG</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+    <div class="container">
+        <h2 class="sec-title" data-sw="Wasiliana Nasi" data-en="Contact Us">Wasiliana Nasi</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="c-icon c-ph"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.24 1.02l-2.21 2.2z"/></svg></div>
+                    <div><strong data-sw="Simu" data-en="Phone">Simu</strong><br><a href="tel:+255784836995">+255 784 836 995</a></div>
+                </div>
+                <div class="contact-item">
+                    <div class="c-icon c-wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.59 2 2.17 6.42 2.17 11.87c0 1.75.46 3.45 1.33 4.95L2 22l5.3-1.39a9.8 9.8 0 0 0 4.74 1.21h.01c5.45 0 9.87-4.42 9.87-9.87 0-2.64-1.03-5.12-2.89-6.99A9.8 9.8 0 0 0 12.04 2z"/></svg></div>
+                    <div><strong>WhatsApp</strong><br><a href="https://wa.me/255784836995" target="_blank" data-sw="Wasiliana kupitia WhatsApp" data-en="Contact via WhatsApp">Wasiliana kupitia WhatsApp</a></div>
+                </div>
+                <div class="contact-item">
+                    <div class="c-icon c-mail"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+                    <div><strong data-sw="Barua Pepe" data-en="Email">Barua Pepe</strong><br><a href="mailto:deokarnikas@gmail.com">deokarnikas@gmail.com</a></div>
+                </div>
+            </div>
+            <div class="contact-form" style="background:rgba(255,255,255,0.92);border-radius:16px;padding:30px;box-shadow:0 6px 20px rgba(0,0,0,0.08);">
+                <h3 style="margin-bottom:18px;" data-sw="Tuma Maoni Yako" data-en="Send Your Feedback">Tuma Maoni Yako</h3>
+                <form onsubmit="sendComment(event)">
+                    <div class="form-group"><label data-sw="Jina Lako" data-en="Your Name">Jina Lako</label><input type="text" id="cName" data-sw-placeholder="Andika jina lako hapa" data-en-placeholder="Type your name here" placeholder="Andika jina lako hapa" required></div>
+                    <div class="form-group"><label data-sw="Barua Pepe" data-en="Email">Barua Pepe</label><input type="email" id="cEmail" data-sw-placeholder="mfano: jina@gmail.com" data-en-placeholder="example: name@gmail.com" placeholder="mfano: jina@gmail.com" required></div>
+                    <div class="form-group"><label data-sw="Ujumbe Wako" data-en="Your Message">Ujumbe Wako</label><textarea id="cMsg" data-sw-placeholder="Andika maoni yako hapa..." data-en-placeholder="Write your feedback here..." placeholder="Andika maoni yako hapa..." required></textarea></div>
+                    <button type="submit" class="send-btn" data-sw="Tuma Maoni" data-en="Send Feedback">Tuma Maoni</button>
+                </form>
+            </div>
+        </div>
+        <div class="comments-section" id="commentsSection">
+            <h3 style="text-align:center; margin-bottom:15px; color:var(--tomato);" data-sw="💬 Maoni ya Wateja" data-en="💬 Customer Reviews">💬 Maoni ya Wateja</h3>
+            <div class="comments-box" id="commentsBox"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div style="max-width:1000px;margin:0 auto;">
+        <h2 style="margin-bottom:8px;">DEO STATIONERY</h2>
+        <p style="color:#bbb;" data-sw="Huduma Bora Unazoweza Kuamini" data-en="Quality Services You Can Trust">Huduma Bora Unazoweza Kuamini</p>
+        <div class="socials">
+            <a href="https://wa.me/255784836995" target="_blank" style="background:#25D366;color:white;"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.59 2 2.17 6.42 2.17 11.87c0 1.75.46 3.45 1.33 4.95L2 22l5.3-1.39a9.8 9.8 0 0 0 4.74 1.21h.01c5.45 0 9.87-4.42 9.87-9.87 0-2.64-1.03-5.12-2.89-6.99A9.8 9.8 0 0 0 12.04 2z"/></svg></a>
+            <a href="mailto:deokarnikas@gmail.com" style="background:var(--tomato);"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+        </div>
+        <p style="color:#888;font-size:.85rem;" data-sw="&copy; 2026 DEO STATIONERY. Haki zote zimehifadhiwa." data-en="&copy; 2026 DEO STATIONERY. All rights reserved.">&copy; 2026 DEO STATIONERY. Haki zote zimehifadhiwa.</p>
+    </div>
+</footer>
+
+<a href="https://wa.me/255784836995" class="wa-float" target="_blank"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.59 2 2.17 6.42 2.17 11.87c0 1.75.46 3.45 1.33 4.95L2 22l5.3-1.39a9.8 9.8 0 0 0 4.74 1.21h.01c5.45 0 9.87-4.42 9.87-9.87 0-2.64-1.03-5.12-2.89-6.99A9.8 9.8 0 0 0 12.04 2z"/></svg></a>
+<div class="timer" id="colorTimer">2:00</div>
+<div class="admin-trigger" onclick="openAdmin()" data-sw="⚙️ Msimamizi" data-en="⚙️ Admin">⚙️ Msimamizi</div>
+
+<!-- ===== ADMIN MODAL ===== -->
+<div class="modal-bg" id="adminModal">
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeAdmin()">&times;</button>
+        <h2 data-sw="⚙️ Mipangilio ya Msimamizi" data-en="⚙️ Admin Settings">⚙️ Mipangilio ya Msimamizi</h2>
+        <div class="pass-group" id="passGroup">
+            <label data-sw="Weka Nenosiri" data-en="Enter Password">Weka Nenosiri</label>
+            <input type="password" id="adminPass" data-sw-placeholder="Nenosiri la msimamizi" data-en-placeholder="Admin password" placeholder="Nenosiri la msimamizi">
+            <br><br>
+            <button class="send-btn" onclick="checkPass()" data-sw="Ingia" data-en="Login">Ingia</button>
+        </div>
+        <div class="settings" id="settingsPanel">
+            <div class="set-item"><span data-sw="Onyesha Picha ya Mmiliki" data-en="Show Owner Photo">Onyesha Picha ya Mmiliki</span><label class="switch"><input type="checkbox" id="togPhoto" checked onchange="toggleOwner()"><span class="slider"></span></label></div>
+            <div class="set-item"><span data-sw="Washa Mabadiliko ya Rangi" data-en="Enable Color Animation">Washa Mabadiliko ya Rangi</span><label class="switch"><input type="checkbox" id="togColor" checked onchange="toggleColorAnim()"><span class="slider"></span></label></div>
+            <div class="set-item"><span data-sw="Badilisha Rangi ya Mandharinyuma" data-en="Change Background Color">Badilisha Rangi ya Mandharinyuma</span><input type="color" id="bgColorPicker" value="#87CEEB" onchange="changeBg()"></div>
+            <div class="set-item"><span data-sw="Onyesha Sehemu ya Maoni" data-en="Show Comments Section">Onyesha Sehemu ya Maoni</span><label class="switch"><input type="checkbox" id="togComments" checked onchange="toggleComments()"><span class="slider"></span></label></div>
+            <div class="set-item"><span data-sw="Onyesha Fomu ya Mawasiliano" data-en="Show Contact Form">Onyesha Fomu ya Mawasiliano</span><label class="switch"><input type="checkbox" id="togContactForm" checked onchange="toggleContactForm()"><span class="slider"></span></label></div>
+            <div class="set-item"><span data-sw="Onyesha Online Application" data-en="Show Online Applications">Onyesha Online Application</span><label class="switch"><input type="checkbox" id="togOnlineServices" checked onchange="toggleOnlineServices()"><span class="slider"></span></label></div>
+            <div class="set-item"><span data-sw="Onyesha Jedwali la Bidhaa" data-en="Show Goods Table">Onyesha Jedwali la Bidhaa</span><label class="switch"><input type="checkbox" id="togGoodsTable" checked onchange="toggleGoodsTable()"><span class="slider"></span></label></div>
+            <div class="set-item"><span data-sw="Hali ya Matengenezo" data-en="Maintenance Mode">Hali ya Matengenezo</span><label class="switch"><input type="checkbox" id="togMaintenance" onchange="toggleMaintenance()"><span class="slider"></span></label></div>
+            <div class="set-item"><span data-sw="Ukubwa wa Fonti" data-en="Font Size">Ukubwa wa Fonti</span><select id="fontSizeSel" onchange="changeFontSize()"><option value="14px" data-sw="Ndogo" data-en="Small">Ndogo</option><option value="16px" selected data-sw="Kawaida" data-en="Normal">Kawaida</option><option value="18px" data-sw="Kubwa" data-en="Large">Kubwa</option><option value="20px" data-sw="Kubwa Sana" data-en="Very Large">Kubwa Sana</option></select></div>
+            <!-- ===== BOX MESSAGES BUTTON ===== -->
+            <div class="set-item" style="background:#fff3cd; border:2px solid #ffc107;">
+                <span style="font-weight:700; color:#856404;">📦 Box Messages</span>
+                <button class="send-btn" onclick="openBoxMessages()" style="padding:8px 16px; font-size:.85rem;" data-sw="Fungua" data-en="Open">Fungua</button>
+            </div>
+            <button class="send-btn" onclick="closeAdmin()" style="margin-top:15px;" data-sw="Funga" data-en="Close">Funga</button>
+        </div>
+    </div>
+</div>
+
+<!-- ===== BOX MESSAGES MODAL ===== -->
+<div class="modal-bg" id="boxMessagesModal">
+    <div class="modal-box" style="max-width:700px;">
+        <button class="modal-close" onclick="closeBoxMessages()">&times;</button>
+        <div class="box-messages-header">
+            <h2 style="margin:0; display:flex; align-items:center; gap:10px; color:var(--tomato);">
+                📦 <span data-sw="Box Messages" data-en="Box Messages">Box Messages</span>
+            </h2>
+            <span id="msgCount" style="background:var(--tomato); color:white; padding:4px 12px; border-radius:20px; font-size:.85rem; font-weight:600;">0</span>
+        </div>
+        <p style="color:#666; font-size:.9rem; margin-bottom:10px;" data-sw="Ujumbe wote uliotumwa na wateja" data-en="All messages sent by customers">Ujumbe wote uliotumwa na wateja</p>
+        <div class="box-messages-list" id="boxMessagesList">
+            <!-- Messages will be rendered here -->
+        </div>
+        <div class="box-messages-footer">
+            <button class="clear-all-btn" onclick="clearAllMessages()" data-sw="Futa Yote" data-en="Clear All">Futa Yote</button>
+            <button class="send-btn" onclick="closeBoxMessages()" style="background:#999;" data-sw="Funga" data-en="Close">Funga</button>
+        </div>
+    </div>
+</div>
+
+<!-- ===== DEVELOPER MODAL ===== -->
+<div class="modal-bg" id="devModal">
+    <div class="modal-box dev-box">
+        <button class="modal-close" onclick="closeDev()">&times;</button>
+        <div class="dev-avatar" id="devAvatarMain"><span id="devEmoji">&#128187;</span><img id="devAvatarImg" src="" alt="Developer" style="display:none;"></div>
+        <h3 id="devNameDisplay">Abel Elias</h3>
+        <div class="company" id="devCompanyDisplay" data-sw="Mmiliki – Software Genius" data-en="Owner – Software Genius">Mmiliki – Software Genius</div>
+        <div class="mail"><a href="mailto:softwaregenius111@gmail.com" id="devEmailDisplay1">softwaregenius111@gmail.com</a></div>
+        <div class="mail"><a href="mailto:abelelias57@outlook.com" id="devEmailDisplay2">abelelias57@outlook.com</a></div>
+        <div class="phone-contact" id="devPhoneDisplay">
+            <span>📞 </span><a href="tel:+255620251203" id="devPhoneLink" style="color:magenta;">+255 620 251 203</a>
+        </div>
+        <div class="dev-details-box">
+            <h4 data-sw="Muhtasari wa Msanidi" data-en="Developer Summary">Muhtasari wa Msanidi</h4>
+            <ul id="devSkillsList">
+                <li data-sw="Msanidi wa wavuti anayejishughulisha na tovuti za biashara" data-en="Web developer specializing in business websites">Msanidi wa wavuti anayejishughulisha na tovuti</li>
+                <li data-sw="Mtaalamu wa HTML, CSS, JavaScript, React, na zaidi" data-en="Expert in HTML, CSS, JavaScript, React, and more">Mtaalamu wa HTML, CSS, JavaScript, React na zaidi</li>
+                <li data-sw="Anatoa uundaji wa wavuti, matengenezo, na msaada" data-en="Provides web development, maintenance, computer OS booting and support">Anatoa uundaji wa wavuti, matengenezo, kurekebisha OS za kompyuta na msaada</li>
+                <li data-sw="Yupo kwa miradi maalum na ushauri" data-en="Available for custom projects and consulting">Yupo kwa miradi maalum na ushauri</li>
+            </ul>
+        </div>
+        <br>
+        <button class="send-btn" onclick="openDevPasswordPrompt()" style="margin-bottom:10px; background:var(--lightblue);" data-sw="Hariri Taarifa za Msanidi" data-en="Edit Developer Info">Hariri Taarifa za Msanidi</button><br>
+        <button class="send-btn" onclick="closeDev()" data-sw="Funga" data-en="Close">Funga</button>
+    </div>
+</div>
+
+<!-- ===== DEVELOPER PASSWORD PROMPT ===== -->
+<div class="dev-nested-bg" id="devPassBg">
+    <div class="dev-nested-box" style="max-width:420px; text-align:center;">
+        <button class="modal-close" onclick="closeDevPasswordPrompt()">&times;</button>
+        <div class="dev-pass-prompt">
+            <div class="lock-icon">🔒</div>
+            <h3 style="margin-bottom:8px;" data-sw="Nenosiri la Msanidi" data-en="Developer Password">Nenosiri la Msanidi</h3>
+            <p style="color:#888; margin-bottom:20px; font-size:.9rem;" data-sw="Weka nenosiri ili kuhariri taarifa za msanidi" data-en="Enter password to edit developer information">Weka nenosiri ili kuhariri taarifa za msanidi</p>
+            <input type="password" id="devPassInput" data-sw-placeholder="Weka nenosiri hapa" data-en-placeholder="Enter password here" placeholder="Weka nenosiri hapa" onkeydown="if(event.key==='Enter')checkDevPass()">
+            <br>
+            <div class="pass-error-msg" id="devPassError" data-sw="❌ Nenosiri si sahihi!" data-en="❌ Incorrect password!">❌ Nenosiri si sahihi!</div>
+            <br>
+            <button class="send-btn" onclick="checkDevPass()" style="width:70%;" data-sw="Ingia" data-en="Login">Ingia</button>
+            <br><br>
+            <button class="send-btn" onclick="closeDevPasswordPrompt()" style="background:#999; width:70%;" data-sw="Ghairi" data-en="Cancel">Ghairi</button>
+        </div>
+    </div>
+</div>
+
+<!-- ===== NESTED DEVELOPER DIALOG ===== -->
+<div class="dev-nested-bg" id="devNestedBg">
+    <div class="dev-nested-box">
+        <button class="modal-close" onclick="closeDevNested()">&times;</button>
+        <h3 data-sw="Taarifa na Picha ya Msanidi" data-en="Developer Information & Photo">Taarifa na Picha ya Msanidi</h3>
+        <div style="text-align:center; margin-bottom:15px;">
+            <label style="font-weight:600; display:block; margin-bottom:8px;" data-sw="Picha ya Msanidi" data-en="Developer Photo">Picha ya Msanidi</label>
+            <div class="dev-photo-preview" id="devPhotoPreview"><span style="font-size:2rem; color:#ccc;">+</span></div>
+            <input type="file" id="devPhotoInput" accept="image/*" onchange="previewDevPhoto(this)" style="margin-top:8px; font-size:.85rem;">
+        </div>
+        <div class="dev-info-summary" id="devInfoSummary">
+            <h4 data-sw="Muhtasari wa Taarifa za Msanidi" data-en="Developer Information Summary">Muhtasari wa Taarifa za Msanidi</h4>
+            <p><strong data-sw="Jina:" data-en="Name:">Jina:</strong> <span id="summaryName">Abel Elias</span></p>
+            <p><strong data-sw="Msimamizi:" data-en="Supervisor:">Msimamizi:</strong> <span id="summaryCompany">Software Genius</span></p>
+            <p><strong data-sw="Barua Pepe:" data-en="Email:">Barua Pepe:</strong> <span id="summaryEmail">softwaregenius111@gmail.com</span></p>
+            <p><strong data-sw="Simu:" data-en="Phone:">Simu:</strong> <span id="summaryPhone">+255 620 251 203</span></p>
+            <p><strong data-sw="Ujuzi:" data-en="Skills:">Ujuzi:</strong> <span id="summarySkills">HTML, CSS, JS, React, Node.js</span></p>
+            <p><strong data-sw="Maelezo:" data-en="Description:">Maelezo:</strong> <span id="summaryDesc" data-sw="Msanidi wa wavuti anayejishughulisha na tovuti za biashara" data-en="Web developer specializing in business websites">Msanidi wa wavuti anayejishughulisha na tovuti za biashara</span></p>
+        </div>
+        <div class="set-item" style="background:#e8f5e9; border:2px solid var(--lightgreen);">
+            <span data-sw="📞 Onyesha Simu Chini ya Barua Pepe" data-en="📞 Show Phone Below Emails">📞 <strong>Onyesha Simu Chini ya Barua Pepe</strong></span>
+            <label class="switch"><input type="checkbox" id="togDevPhone" checked onchange="toggleDevPhoneVisibility()"><span class="slider"></span></label>
+        </div>
+        <div class="dev-nested-form">
+            <div class="form-group"><label data-sw="Jina Kamili" data-en="Full Name">Jina Kamili</label><input type="text" id="devNameInput" value="Abel Elias"></div>
+            <div class="form-group"><label data-sw="Msimamizi" data-en="Supervisor">Msimamizi</label><input type="text" id="devCompanyInput" value="Software Genius"></div>
+            <div class="form-group"><label data-sw="Barua Pepe ya Kwanza" data-en="First Email">Barua Pepe ya Kwanza</label><input type="email" id="devEmailInput1" value="softwaregenius111@gmail.com"></div>
+            <div class="form-group"><label data-sw="Barua Pepe ya Pili" data-en="Second Email">Barua Pepe ya Pili</label><input type="email" id="devEmailInput2" value="abelelias57@outlook.com"></div>
+            <div class="form-group"><label data-sw="Nambari ya Simu" data-en="Phone Number">Nambari ya Simu</label><input type="tel" id="devPhoneInput" value="+255 620 251 203" data-sw-placeholder="+255 XXX XXX XXX" data-en-placeholder="+255 XXX XXX XXX" placeholder="+255 XXX XXX XXX"></div>
+            <div class="form-group"><label data-sw="Ujuzi" data-en="Skills">Ujuzi</label><input type="text" id="devSkillsInput" value="HTML, CSS, JS, React, Node.js"></div>
+            <div class="form-group"><label data-sw="Maelezo" data-en="Description">Maelezo</label><textarea id="devDescInput" rows="3">Msanidi wa wavuti anayejishughulisha na tovuti za biashara</textarea></div>
+            <button class="send-btn" onclick="saveDevInfo()" style="width:100%;" data-sw="Hifadhi na Sasisha" data-en="Save & Update">Hifadhi na Sasisha</button>
+        </div>
+        <br>
+        <button class="send-btn" onclick="closeDevNested()" style="background:#999;" data-sw="Funga" data-en="Close">Funga</button>
+    </div>
+</div>
+
+<!-- ===== SERVICE DIALOG ===== -->
+<div class="service-dialog-bg" id="serviceDialogBg">
+    <div class="service-dialog-box">
+        <button class="modal-close" onclick="closeServiceDialog()">&times;</button>
+        <h3 id="serviceDialogTitle"></h3>
+        <p class="desc" id="serviceDialogDesc"></p>
+        <ul id="serviceDialogList"></ul>
+        <br>
+        <button class="send-btn" onclick="closeServiceDialog()" data-sw="Funga" data-en="Close">Funga</button>
+    </div>
+</div>
+
+<!-- ===== OWNER DIALOG ===== -->
+<div class="modal-bg" id="ownerDialogBg">
+    <div class="modal-box" style="text-align:center;">
+        <button class="modal-close" onclick="closeOwnerDialog()">&times;</button>
+        <h2 style="justify-content:center;" data-sw="Mmiliki wa Stationery" data-en="Stationery Owner">Mmiliki wa Stationery</h2>
+        <div style="width:120px;height:120px;border-radius:50%;margin:0 auto 15px;overflow:hidden;border:4px solid var(--tomato);">
+            <img src="Deo.jpg" alt="Owner" style="width:100%;height:100%;object-fit:cover;" id="ownerDialogImg" onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(135deg,#87CEEB,#FF6347);display:flex;align-items:center;justify-content:center;color:white;font-size:2.5rem;\'></div>'">
+        </div>
+        <h3 style="margin-bottom:5px;">Deokari Nikasi Gotifridi</h3>
+        <p style="color:var(--gray); margin-bottom:10px;" data-sw="Mmiliki na Meneja" data-en="Owner & Manager">Mmiliki na Meneja</p>
+        <p style="font-size:.9rem; color:#555;" data-sw="DEO STATIONERY — Kituo chako cha stationery na huduma za kidijitali." data-en="DEO STATIONERY — Your stationery & digital services center.">DEO STATIONERY — Kituo chako cha stationery na huduma za kidijitali.</p>
+        <br>
+        <button class="send-btn" onclick="closeOwnerDialog()" data-sw="Funga" data-en="Close">Funga</button>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===== TRANSLATIONS ===== */
+var currentLang = 'sw';
+
+function setLang(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    
+    // Update buttons
+    document.getElementById('enBtn').classList.toggle('active', lang === 'en');
+    document.getElementById('swBtn').classList.toggle('active', lang === 'sw');
+    
+    // Update all elements with data-sw / data-en
+    var elements = document.querySelectorAll('[data-sw][data-en]');
+    elements.forEach(function(el) {
+        var text = el.getAttribute('data-' + lang);
+        if (text) {
+            // Preserve HTML if it contains tags
+            if (text.indexOf('<') !== -1) {
+                el.innerHTML = text;
+            } else {
+                el.textContent = text;
+            }
+        }
+    });
+    
+    // Update placeholders
+    var inputs = document.querySelectorAll('[data-sw-placeholder][data-en-placeholder]');
+    inputs.forEach(function(inp) {
+        var ph = inp.getAttribute('data-' + lang + '-placeholder');
+        if (ph) inp.placeholder = ph;
+    });
+    
+    // Update select options
+    var selects = document.querySelectorAll('select option[data-sw][data-en]');
+    selects.forEach(function(opt) {
+        var text = opt.getAttribute('data-' + lang);
+        if (text) opt.textContent = text;
+    });
+    
+    // Update comments section heading dynamically
+    var commentsHeading = document.querySelector('#commentsSection h3');
+    if (commentsHeading) {
+        commentsHeading.textContent = lang === 'en' ? '💬 Customer Reviews' : '💬 Maoni ya Wateja';
+    }
+    
+    // Re-render comments with new language
+    renderComments();
+    renderBoxMessages(); // Also re-render box messages for language change
+    
+    // Update service dialog data
+    updateServiceDialogs();
+}
+
+/* ===== COMMENTS & BOX MESSAGES STORAGE ===== */
+var commentsData = [];
+var boxMessagesData = [];
+
+// Load messages from localStorage on page load
+document.addEventListener('DOMContentLoaded', function() {
+    var storedComments = localStorage.getItem('deoStationeryComments');
+    var storedBoxMessages = localStorage.getItem('deoStationeryBoxMessages');
+    if (storedComments) commentsData = JSON.parse(storedComments);
+    if (storedBoxMessages) boxMessagesData = JSON.parse(storedBoxMessages);
+    renderComments();
+});
+
+function saveMessagesToStorage() {
+    localStorage.setItem('deoStationeryComments', JSON.stringify(commentsData));
+    localStorage.setItem('deoStationeryBoxMessages', JSON.stringify(boxMessagesData));
+}
+
+function sendComment(e) {
+    e.preventDefault();
+    var nameVal = document.getElementById('cName').value;
+    var emailVal = document.getElementById('cEmail').value;
+    var msgVal = document.getElementById('cMsg').value;
+    var dateVal = new Date().toLocaleDateString(currentLang === 'sw' ? 'sw-TZ' : 'en-US');
+    var timeVal = new Date().toLocaleTimeString(currentLang === 'sw' ? 'sw-TZ' : 'en-US', {hour:'2-digit', minute:'2-digit'});
+    
+    // Create message object for Box Messages
+    var newMessage = {
+        id: Date.now(),
+        name: nameVal,
+        email: emailVal,
+        message: msgVal,
+        date: dateVal,
+        time: timeVal,
+        timestamp: new Date().toISOString()
+    };
+    
+    // Add to both comments (for public display) and box messages (for admin)
+    commentsData.push({ name: nameVal, msg: msgVal, date: dateVal });
+    boxMessagesData.unshift(newMessage); // Add to beginning for newest first
+    
+    // Save to localStorage
+    saveMessagesToStorage();
+    
+    // Re-render
+    renderComments();
+    renderBoxMessages();
+    
+    // Clear form
+    document.getElementById('cName').value = '';
+    document.getElementById('cEmail').value = '';
+    document.getElementById('cMsg').value = '';
+    
+    var thankMsg = currentLang === 'sw' 
+        ? '✅ Asante ' + nameVal + '! Maoni yako yamepokelewa.' 
+        : '✅ Thank you ' + nameVal + '! Your feedback has been received.';
+    showToast(thankMsg);
+}
+
+function renderComments() {
+    var box = document.getElementById('commentsBox');
+    box.innerHTML = '';
+    if (commentsData.length === 0) {
+        var emptyMsg = currentLang === 'sw' 
+            ? 'Bado hakuna maoni. Kuwa wa kwanza kutoa maoni yako!' 
+            : 'No reviews yet. Be the first to leave your feedback!';
+        box.innerHTML = '<p style="text-align:center; color:#888; padding:20px;">' + emptyMsg + '</p>';
+        return;
+    }
+    commentsData.forEach(function(c, index) {
+        var deleteMsg = currentLang === 'sw' ? '🗑️ Futa' : '🗑️ Delete';
+        var confirmMsg = currentLang === 'sw' ? 'Una uhakika unataka kufuta maoni haya?' : 'Are you sure you want to delete this review?';
+        box.innerHTML += '<div class="comment-card"><strong>👤 ' + c.name + '</strong> <small>📅 ' + c.date + '</small><p style="margin-top:8px; color:#444;">' + c.msg + '</p><button onclick="deleteComment(' + index + ',\'' + confirmMsg + '\')" style="margin-top:8px; background:none; border:none; color:#999; cursor:pointer; font-size:.8rem;">' + deleteMsg + '</button></div>';
+    });
+}
+
+function deleteComment(index, confirmMsg) {
+    if (confirm(confirmMsg)) {
+        commentsData.splice(index, 1);
+        saveMessagesToStorage();
+        renderComments();
+        var deleteToast = currentLang === 'sw' ? '🗑️ Maoni limefutwa.' : '🗑️ Review deleted.';
+        showToast(deleteToast);
+    }
+}
+
+/* ===== BOX MESSAGES FUNCTIONS ===== */
+function openBoxMessages() {
+    renderBoxMessages();
+    document.getElementById('boxMessagesModal').classList.add('show');
+}
+
+function closeBoxMessages() {
+    document.getElementById('boxMessagesModal').classList.remove('show');
+}
+
+function renderBoxMessages() {
+    var list = document.getElementById('boxMessagesList');
+    var countEl = document.getElementById('msgCount');
+    
+    // Update count
+    countEl.textContent = boxMessagesData.length;
+    
+    if (boxMessagesData.length === 0) {
+        var emptyMsg = currentLang === 'sw' 
+            ? 'Hakuna ujumbe bado. Wateja wataanza kutuma baada ya kujaza fomu.' 
+            : 'No messages yet. Customers will start sending after filling the form.';
+        list.innerHTML = '<div class="msg-empty">' + emptyMsg + '</div>';
+        return;
+    }
+    
+    list.innerHTML = '';
+    boxMessagesData.forEach(function(msg, index) {
+        var emailLabel = currentLang === 'sw' ? '📧 Barua Pepe:' : '📧 Email:';
+        var deleteConfirm = currentLang === 'sw' ? 'Una uhakika unataka kufuta ujumbe huu kutoka kwa ' + msg.name + '?' : 'Are you sure you want to delete this message from ' + msg.name + '?';
+        var deleteBtnText = currentLang === 'sw' ? '🗑️ Futa' : '🗑️ Delete';
+        var emailBtnText = currentLang === 'sw' ? '✉️ Tuma Email' : '✉️ Send Email';
+        var waBtnText = currentLang === 'sw' ? '💬 WhatsApp' : '💬 WhatsApp';
+        
+        // Format phone for WhatsApp (extract from email or use default)
+        var waNumber = '255784836995'; // Default business number
+        if (msg.email && msg.email.includes('@')) {
+            // Try to extract phone if email contains phone pattern
+            var phoneMatch = msg.email.match(/(\+?255\d{9})/);
+            if (phoneMatch) waNumber = phoneMatch[1].replace('+', '');
+        }
+        
+        list.innerHTML += `
+            <div class="message-card">
+                <div class="msg-header">
+                    <div>
+                        <div class="msg-name">👤 ` + msg.name + `</div>
+                        <div class="msg-date">📅 ` + msg.date + ` ` + msg.time + `</div>
+                    </div>
+                </div>
+                <div class="msg-email">` + emailLabel + ` <a href="mailto:` + msg.email + `">` + msg.email + `</a></div>
+                <div class="msg-content">` + msg.message + `</div>
+                <div class="msg-actions">
+                    <button class="msg-btn msg-btn-email" onclick="window.location.href='mailto:` + msg.email + `?subject=Re: DEO STATIONERY&body=Hello ` + msg.name + `,'">` + emailBtnText + `</button>
+                    <button class="msg-btn msg-btn-wa" onclick="window.open('https://wa.me/` + waNumber + `?text=Hello ` + encodeURIComponent(msg.name) + `, regarding your message: ' + encodeURIComponent(msg.message.substring(0,50)) + '...', '_blank')">` + waBtnText + `</button>
+                    <button class="msg-btn msg-btn-delete" onclick="deleteBoxMessage(` + index + `, '` + deleteConfirm + `')">` + deleteBtnText + `</button>
+                </div>
+            </div>
+        `;
+    });
+}
+
+function deleteBoxMessage(index, confirmMsg) {
+    if (confirm(confirmMsg)) {
+        var deletedName = boxMessagesData[index].name;
+        boxMessagesData.splice(index, 1);
+        saveMessagesToStorage();
+        renderBoxMessages();
+        var deleteToast = currentLang === 'sw' 
+            ? '🗑️ Ujumbe wa ' + deletedName + ' umefutwa.' 
+            : '🗑️ Message from ' + deletedName + ' deleted.';
+        showToast(deleteToast);
+    }
+}
+
+function clearAllMessages() {
+    var confirmMsg = currentLang === 'sw' 
+        ? '⚠️ UNA HAKIKA? Hii itafuta ujumbe wote ' + boxMessagesData.length + ' kwa milele!' 
+        : '⚠️ ARE YOU SURE? This will permanently delete all ' + boxMessagesData.length + ' messages!';
+    if (confirm(confirmMsg)) {
+        boxMessagesData = [];
+        saveMessagesToStorage();
+        renderBoxMessages();
+        var clearToast = currentLang === 'sw' ? '✅ Ujumbe wote umefutwa!' : '✅ All messages cleared!';
+        showToast(clearToast);
+    }
+}
+
+/* ===== TIMER ===== */
+var timerSeconds = 120;
+setInterval(function() {
+    timerSeconds--;
+    if (timerSeconds < 0) timerSeconds = 120;
+    var m = Math.floor(timerSeconds / 60);
+    var s = timerSeconds % 60;
+    document.getElementById('colorTimer').textContent = m + ':' + (s < 10 ? '0' : '') + s;
+}, 1000);
+
+/* ===== TOAST ===== */
+function showToast(msg) {
+    var t = document.getElementById('toast');
+    t.textContent = msg;
+    t.style.display = 'block';
+    setTimeout(function() { t.style.display = 'none'; }, 2500);
+}
+
+/* ===== ADMIN ===== */
+function openAdmin() { document.getElementById('adminModal').classList.add('show'); }
+function closeAdmin() { document.getElementById('adminModal').classList.remove('show'); document.getElementById('adminPass').value = ''; }
+function checkPass() {
+    if (document.getElementById('adminPass').value === 'DeoNikasi') {
+        document.getElementById('passGroup').style.display = 'none';
+        document.getElementById('settingsPanel').classList.add('active');
+        var loginMsg = currentLang === 'sw' ? '✅ Umeingia kama Msimamizi!' : '✅ Logged in as Admin!';
+        showToast(loginMsg);
+    } else { 
+        var errorMsg = currentLang === 'sw' ? '❌ Neno siri si sahihi!' : '❌ Incorrect password!';
+        showToast(errorMsg); 
+    }
+}
+function toggleOwner() { document.getElementById('ownerFloat').style.display = document.getElementById('togPhoto').checked ? 'block' : 'none'; }
+function toggleColorAnim() { document.body.style.animation = document.getElementById('togColor').checked ? 'colorShift 120s ease infinite' : 'none'; }
+function changeBg() { document.body.style.background = document.getElementById('bgColorPicker').value; }
+function toggleComments() { var cs = document.getElementById('commentsSection'); if (document.getElementById('togComments').checked) { cs.classList.remove('hidden'); } else { cs.classList.add('hidden'); } }
+function toggleContactForm() { document.querySelector('.contact-form').style.display = document.getElementById('togContactForm').checked ? 'block' : 'none'; }
+function toggleOnlineServices() { document.getElementById('onlineapps').style.display = document.getElementById('togOnlineServices').checked ? 'block' : 'none'; }
+function toggleGoodsTable() { var tables = document.querySelectorAll('.services-table-wrap'); tables.forEach(function(t) { t.style.display = document.getElementById('togGoodsTable').checked ? 'block' : 'none'; }); }
+function toggleMaintenance() { 
+    var msg = document.getElementById('togMaintenance').checked 
+        ? (currentLang === 'sw' ? '🔧 Hali ya matengenezo imewashwa!' : '🔧 Maintenance mode enabled!') 
+        : (currentLang === 'sw' ? '✅ Hali ya matengenezo imezimwa!' : '✅ Maintenance mode disabled!');
+    showToast(msg); 
+}
+function changeFontSize() { document.body.style.fontSize = document.getElementById('fontSizeSel').value; }
+
+/* ===== DEVELOPER ===== */
+function openDev() { document.getElementById('devModal').classList.add('show'); }
+function closeDev() { document.getElementById('devModal').classList.remove('show'); }
+
+/* ===== DEVELOPER PASSWORD PROMPT ===== */
+function openDevPasswordPrompt() {
+    document.getElementById('devPassBg').classList.add('show');
+    document.getElementById('devPassInput').value = '';
+    document.getElementById('devPassError').style.display = 'none';
+    setTimeout(function() { document.getElementById('devPassInput').focus(); }, 200);
+}
+function closeDevPasswordPrompt() { document.getElementById('devPassBg').classList.remove('show'); }
+function checkDevPass() {
+    var enteredPass = document.getElementById('devPassInput').value;
+    if (enteredPass === 'Software Genius') {
+        document.getElementById('devPassBg').classList.remove('show');
+        document.getElementById('devModal').classList.remove('show');
+        document.getElementById('devNestedBg').classList.add('show');
+        var successMsg = currentLang === 'sw' ? '✅ Umeingia! Sasa unaweza kuhariri taarifa.' : '✅ Logged in! You can now edit information.';
+        showToast(successMsg);
+    } else {
+        document.getElementById('devPassError').style.display = 'block';
+        var failMsg = currentLang === 'sw' ? '❌ Nenosiri si sahihi!' : '❌ Incorrect password!';
+        showToast(failMsg);
+        document.getElementById('devPassInput').value = '';
+        document.getElementById('devPassInput').focus();
+    }
+}
+
+/* ===== NESTED DEVELOPER DIALOG ===== */
+function closeDevNested() { document.getElementById('devNestedBg').classList.remove('show'); openDev(); }
+
+function previewDevPhoto(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('devPhotoPreview').innerHTML = '<img src="' + e.target.result + '" alt="Developer Photo">';
+            document.getElementById('devAvatarImg').src = e.target.result;
+            document.getElementById('devAvatarImg').style.display = 'block';
+            document.getElementById('devEmoji').style.display = 'none';
+            document.getElementById('devPhCircle').innerHTML = '<img src="' + e.target.result + '" style="width:100%;height:100%;border-radius:50%;object-fit:cover;">';
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+function toggleDevPhoneVisibility() {
+    var phoneEl = document.getElementById('devPhoneDisplay');
+    var isChecked = document.getElementById('togDevPhone').checked;
+    if (isChecked) {
+        phoneEl.classList.remove('hidden-phone');
+    } else {
+        phoneEl.classList.add('hidden-phone');
+    }
+}
+
+function saveDevInfo() {
+    var nameVal = document.getElementById('devNameInput').value;
+    var companyVal = document.getElementById('devCompanyInput').value;
+    var email1Val = document.getElementById('devEmailInput1').value;
+    var email2Val = document.getElementById('devEmailInput2').value;
+    var phoneVal = document.getElementById('devPhoneInput').value;
+    var skillsVal = document.getElementById('devSkillsInput').value;
+    var descVal = document.getElementById('devDescInput').value;
+
+    document.getElementById('summaryName').textContent = nameVal;
+    document.getElementById('summaryCompany').textContent = companyVal;
+    document.getElementById('summaryEmail').textContent = email1Val;
+    document.getElementById('summaryPhone').textContent = phoneVal;
+    document.getElementById('summarySkills').textContent = skillsVal;
+    document.getElementById('summaryDesc').textContent = descVal;
+
+    document.getElementById('devNameDisplay').textContent = nameVal;
+    document.getElementById('devCompanyDisplay').textContent = companyVal;
+    document.getElementById('devEmailDisplay1').textContent = email1Val;
+    document.getElementById('devEmailDisplay1').href = 'mailto:' + email1Val;
+    document.getElementById('devEmailDisplay2').textContent = email2Val;
+    document.getElementById('devEmailDisplay2').href = 'mailto:' + email2Val;
+    document.getElementById('devPhoneLink').textContent = phoneVal;
+    document.getElementById('devPhoneLink').href = 'tel:' + phoneVal.replace(/\s/g, '');
+
+    var skillsArr = skillsVal.split(',').map(function(s) { return s.trim(); });
+    var skillsHtml = '<li>' + descVal + '</li>';
+    skillsArr.forEach(function(skill) {
+        var expertText = currentLang === 'sw' ? 'Mtaalamu wa ' : 'Expert in ';
+        skillsHtml += '<li>' + expertText + skill + '</li>';
+    });
+    document.getElementById('devSkillsList').innerHTML = skillsHtml;
+
+    var savedMsg = currentLang === 'sw' ? '✅ Taarifa zimehifadhiwa na kusasishwa!' : '✅ Information saved and updated!';
+    showToast(savedMsg);
+}
+
+/* ===== OWNER DIALOG ===== */
+function openOwnerDialog() { document.getElementById('ownerDialogBg').classList.add('show'); }
+function closeOwnerDialog() { document.getElementById('ownerDialogBg').classList.remove('show'); }
+
+/* ===== SERVICE DIALOG (Bilingual) ===== */
+var serviceData = {
+    rita: {
+        title_sw: '🪪 RITA (Vizazi na Vifo)', title_en: '🪪 RITA (Birth & Death Registration)',
+        desc_sw: 'Huduma za Wakala wa Usajili na Udhamini.', desc_en: 'Registration, Insolvency and Trusteeship Agency Services.',
+        items_sw: ['<strong>Cheti cha kuzaliwa</strong> — Omba cheti cha kuzaliwa', '<strong>Cheti cha kifo</strong> — Omba cheti cha kifo', '<strong>Marekebisho ya majina</strong> — Rekebisha taarifa', '<strong>Cheti cha ndoa</strong> — Omba cheti cha ndoa', '<strong>Uthibitisho</strong> — Thibitisha vyeti'],
+        items_en: ['<strong>Birth certificate</strong> — Apply for birth certificate', '<strong>Death certificate</strong> — Apply for death certificate', '<strong>Name corrections</strong> — Amend information', '<strong>Marriage certificate</strong> — Apply for marriage certificate', '<strong>Verification</strong> — Verify certificates']
+    },
+    nida: {
+        title_sw: '🆔 NIDA', title_en: '🆔 NIDA',
+        desc_sw: 'Huduma za Mamlaka ya Kitambulisho cha Taifa.', desc_en: 'National Identification Authority Services.',
+        items_sw: ['<strong>Maombi ya NIDA mpya</strong> — Omba NIDA mpya', '<strong>Kufuatilia NIDA</strong> — Fuatilia hali ya maombi', '<strong>Kubadilisha taarifa</strong> — Rekebisha taarifa', '<strong>Kubadili kadi iliyopotea</strong> — Omba kadi mpya', '<strong>Kusajili biometric</strong> — Alama za vidole na picha'],
+        items_en: ['<strong>New NIDA application</strong> — Apply for new NIDA', '<strong>NIDA tracking</strong> — Track application status', '<strong>Update information</strong> — Amend details', '<strong>Replace lost card</strong> — Apply for new card', '<strong>Biometric registration</strong> — Fingerprints & photo']
+    },
+    tcu: {
+        title_sw: '🎓 TCU (Maombi ya Vyuo)', title_en: '🎓 TCU (University Applications)',
+        desc_sw: 'Tume ya Vyuo Vikuu Tanzania.', desc_en: 'Tanzania Commission for Universities.',
+        items_sw: ['<strong>Kuomba vyuo</strong> — Omba programu za shahada/diploma', '<strong>Kuchagua kozi</strong> — Chagua kozi', '<strong>Kufuatilia udhamini</strong> — Fuatilia hali', '<strong>Mfumo wa udhamini wa kati</strong> — Omba kupitia CAS', '<strong>Maombi ya uhamisho</strong> — Hamisha kati ya vyuo'],
+        items_en: ['<strong>Apply to universities</strong> — Apply for degree/diploma programs', '<strong>Select courses</strong> — Choose courses', '<strong>Track sponsorship</strong> — Track status', '<strong>Central sponsorship system</strong> — Apply through CAS', '<strong>Transfer applications</strong> — Transfer between universities']
+    },
+    heslb: {
+        title_sw: '💰 HESLB (Mikopo)', title_en: '💰 HESLB (Student Loans)',
+        desc_sw: 'Bodi ya Mikopo ya Wanafunzi wa Elimu ya Juu.', desc_en: 'Higher Education Students Loans Board.',
+        items_sw: ['<strong>Kuomba mkopo</strong> — Omba mkopo mtandaoni', '<strong>Kufuatilia maombi</strong> — Fuatilia hali', '<strong>Ku-upload nyaraka</strong> — Pakia nyaraka', '<strong>Ugawaji wa mkopo</strong> — Angalia matokeo', '<strong>Rufaa</strong> — Rufaa ya uamuzi'],
+        items_en: ['<strong>Apply for loan</strong> — Apply online', '<strong>Track applications</strong> — Track status', '<strong>Upload documents</strong> — Upload required documents', '<strong>Loan allocation</strong> — Check results', '<strong>Appeal</strong> — Appeal decision']
+    },
+    nactvet: {
+        title_sw: '🏫 NACTVET', title_en: '🏫 NACTVET',
+        desc_sw: 'Baraza la Taifa la Elimu ya Ufundi na Stadi.', desc_en: 'National Council for Technical Education.',
+        items_sw: ['<strong>Maombi ya vyuo</strong> — Omba diploma/cheti', '<strong>Uteuzi na udhamini</strong> — Angalia matokeo', '<strong>Kusajili programu</strong> — Sajili kwa programu', '<strong>Uthibitisho wa chuo</strong> — Thibitisha vyuo', '<strong>Kufuatilia maombi</strong> — Fuatilia maendeleo'],
+        items_en: ['<strong>College applications</strong> — Apply for diploma/certificate', '<strong>Selection & sponsorship</strong> — Check results', '<strong>Program registration</strong> — Register for programs', '<strong>College verification</strong> — Verify colleges', '<strong>Track applications</strong> — Track progress']
+    },
+    necta: {
+        title_sw: '📊 NECTA (Mitihani)', title_en: '📊 NECTA (Examinations)',
+        desc_sw: 'Baraza la Mitihani la Taifa Tanzania.', desc_en: 'National Examinations Council of Tanzania.',
+        items_sw: ['<strong>Kuangalia matokeo</strong> — Angalia matokeo', '<strong>Kuomba vyeti</strong> — Omba vyeti', '<strong>Uthibitisho</strong> — Thibitisha cheti', '<strong>Tathmini upya</strong> — Omba tathmini upya', '<strong>Kubadili vyeti</strong> — Omba cheti kipya'],
+        items_en: ['<strong>Check results</strong> — View examination results', '<strong>Apply for certificates</strong> — Request certificates', '<strong>Verification</strong> — Verify certificate', '<strong>Re-evaluation</strong> — Request re-evaluation', '<strong>Replace certificates</strong> — Apply for new certificate']
+    },
+    tra: {
+        title_sw: '🚗 TRA', title_en: '🚗 TRA (Tax)',
+        desc_sw: 'Mamlaka ya Mapato Tanzania.', desc_en: 'Tanzania Revenue Authority.',
+        items_sw: ['<strong>TIN</strong> — Omba Nambari ya Kodi', '<strong>Ufuatiliaji kodi</strong> — Omba cheti', '<strong>Nambari za udhibiti</strong> — Tengeneza nambari', '<strong>Kurudisho la kodi</strong> — Wasilisha mtandaoni', '<strong>Utiifu wa kodi</strong> — Angalia hali'],
+        items_en: ['<strong>TIN</strong> — Apply for Taxpayer Identification Number', '<strong>Tax clearance</strong> — Apply for certificate', '<strong>Control numbers</strong> — Generate numbers', '<strong>Tax returns</strong> — File online', '<strong>Tax compliance</strong> — Check status']
+    },
+    immigration: {
+        title_sw: '🪪 Huduma za Uhamiaji', title_en: '🪪 Immigration Services',
+        desc_sw: 'Idara ya Huduma za Uhamiaji Tanzania.', desc_en: 'Tanzania Immigration Department.',
+        items_sw: ['<strong>Pasipoti</strong> — Omba pasipoti mpya', '<strong>Visa</strong> — Omba visa', '<strong>Ruhusa ya makazi</strong> — Omba ruhusa', '<strong>Ruhusa ya kazi</strong> — Omba ruhusa ya kazi', '<strong>Kufuatilia pasipoti</strong> — Fuatilia hali'],
+        items_en: ['<strong>Passport</strong> — Apply for new passport', '<strong>Visa</strong> — Apply for visa', '<strong>Residence permit</strong> — Apply for permit', '<strong>Work permit</strong> — Apply for work permit', '<strong>Track passport</strong> — Track application status']
+    },
+    brela: {
+        title_sw: '🏢 BRELA', title_en: '🏢 BRELA',
+        desc_sw: 'Wakala wa Usajili na Leseni za Biashara.', desc_en: 'Business Registrations and Licensing Agency.',
+        items_sw: ['<strong>Kusajili biashara</strong> — Sajili kampuni', '<strong>Leseni</strong> — Omba leseni', '<strong>Kuhifadhi jina</strong> — Hifadhi jina', '<strong>Kurudisho la mwaka</strong> — Wasilisha', '<strong>Kutafuta rekodi</strong> — Tafuta biashara'],
+        items_en: ['<strong>Business registration</strong> — Register company', '<strong>Licensing</strong> — Apply for license', '<strong>Name reservation</strong> — Reserve business name', '<strong>Annual returns</strong> — File returns', '<strong>Search records</strong> — Search businesses']
+    },
+    judiciary: {
+        title_sw: '⚖️ Mahakama (e-Filing)', title_en: '⚖️ Judiciary (e-Filing)',
+        desc_sw: 'Mahakama ya Tanzania — e-Filing.', desc_en: 'Tanzania Judiciary — e-Filing.',
+        items_sw: ['<strong>Kufungua kesi</strong> — Fungua mtandaoni', '<strong>Nyaraka za kisheria</strong> — Wasilisha', '<strong>Kufuatilia kesi</strong> — Fuatilia hali', '<strong>Kulipia ada</strong> — Lipia mtandaoni', '<strong>Kupata nyaraka</strong> — Pata nyaraka'],
+        items_en: ['<strong>Open case</strong> — File online', '<strong>Legal documents</strong> — Submit documents', '<strong>Track case</strong> — Track status', '<strong>Pay fees</strong> — Pay online', '<strong>Obtain documents</strong> — Get documents']
+    },
+    gepg: {
+        title_sw: '📱 GePG', title_en: '📱 GePG',
+        desc_sw: 'Lango la Malipo la Serikali.', desc_en: 'Government e-Payment Gateway.',
+        items_sw: ['<strong>Ada za vyuo</strong> — Lipia kupitia GePG', '<strong>Maombi ya RITA</strong> — Lipia huduma', '<strong>Ada za pasipoti</strong> — Lipia ada', '<strong>Nambari za udhibiti</strong> — Tengeneza', '<strong>Kufuatilia malipo</strong> — Fuatilia hali'],
+        items_en: ['<strong>University fees</strong> — Pay via GePG', '<strong>RITA applications</strong> — Pay for services', '<strong>Passport fees</strong> — Pay fees', '<strong>Control numbers</strong> — Generate numbers', '<strong>Track payments</strong> — Track status']
+    },
+    common: {
+        title_sw: '📄 Huduma za Kawaida', title_en: '📄 Common Services',
+        desc_sw: 'Huduma za kila siku.', desc_en: 'Everyday services.',
+        items_sw: ['<strong>Uchangaji</strong> — Changia nyaraka', '<strong>Kupakia</strong> — Pakia nyaraka', '<strong>Uchapaji fomu</strong> — Chapisha fomu', '<strong>Barua pepe</strong> — Unda akaunti', '<strong>Fotokopi</strong> — Fanya nakala', '<strong>Intaneti</strong> — Vinjari mtandaoni'],
+        items_en: ['<strong>Scanning</strong> — Scan documents', '<strong>Upload</strong> — Upload documents', '<strong>Form printing</strong> — Print forms', '<strong>Email</strong> — Create account', '<strong>Photocopy</strong> — Make copies', '<strong>Internet</strong> — Browse online']
+    }
+};
+
+function updateServiceDialogs() {
+    // Service data is already stored with both languages
+}
+
+function openServiceDialog(key) {
+    var data = serviceData[key];
+    if (!data) return;
+    var titleKey = currentLang === 'en' ? 'title_en' : 'title_sw';
+    var descKey = currentLang === 'en' ? 'desc_en' : 'desc_sw';
+    var itemsKey = currentLang === 'en' ? 'items_en' : 'items_sw';
+    
+    document.getElementById('serviceDialogTitle').innerHTML = data[titleKey];
+    document.getElementById('serviceDialogDesc').textContent = data[descKey];
+    var html = '';
+    data[itemsKey].forEach(function(item) { html += '<li>' + item + '</li>'; });
+    document.getElementById('serviceDialogList').innerHTML = html;
+    document.getElementById('serviceDialogBg').classList.add('show');
+}
+function closeServiceDialog() { document.getElementById('serviceDialogBg').classList.remove('show'); }
+
+/* ===== SMOOTH SCROLL ===== */
+document.querySelectorAll('.nav a').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+/* ===== CLOSE MODALS ON BACKDROP CLICK ===== */
+document.querySelectorAll('.modal-bg, .service-dialog-bg, .dev-nested-bg').forEach(function(bg) {
+    bg.addEventListener('click', function(e) { if (e.target === bg) bg.classList.remove('show'); });
+});
+
+/* ===== INIT ===== */
+renderComments();
+</script>
+</body>
+</html>
